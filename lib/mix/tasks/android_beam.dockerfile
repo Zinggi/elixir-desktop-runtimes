@@ -43,7 +43,7 @@ WORKDIR /work/otp
 config = "--with-ssl=/usr/local/openssl/ --disable-dynamic-ssl-lib --without-javac --without-odbc --without-wx --without-debugger --without-observer --without-cdv --without-et --xcomp-conf=xcomp/erl-xcomp-#{@arch.id}-android.conf"
 # Disabled jit for arm and x86_64 until https://github.com/erlang/otp/issues/4950 is fixed
 # config = if @arch.id == "x86_64", do: "--disable-jit #{config}", else: config
-config = "--disable-jit #{config}"
+# config = "--disable-jit #{config}"
 %>
 RUN ./otp_build configure <%= config %>
 RUN ./otp_build boot -a
