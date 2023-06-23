@@ -1,13 +1,13 @@
 name: "CI"
 on: ["push", "pull_request"]
 env:
-  OTP_TAG: OTP-25.0.4
+  OTP_TAG: OTP-26.0.1
   OTP_SOURCE: https://github.com/erlang/otp
 
 jobs:
   build:
     name: "Build Android runtimes"
-    runs-on: "ubuntu-latest"
+    runs-on: "ubuntu-20.04"
     strategy:
       matrix:
         arch: ["arm", "arm64", "x86_64"]
